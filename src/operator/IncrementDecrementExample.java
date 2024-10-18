@@ -30,8 +30,9 @@ public class IncrementDecrementExample {
             if (numbers[i] % 2 == 0){ // 짝수만 출력
                 System.out.println("짝수 요소: " + numbers[i]);
 
+
+                }
             }
-        }
         }
     }
 }
