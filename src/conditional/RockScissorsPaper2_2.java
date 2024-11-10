@@ -65,7 +65,7 @@ public class RockScissorsPaper2_2 {
 
             // 결과값 출력
             String srpStrToInt[] = {"Scissors", "Rock", "Paper"};
-            System.out.println(result + "\tUsesr : " + srpStrToInt[userInput]
+            System.out.println(result + "\tUser : " + srpStrToInt[userInput]
                     + "\tComputer : " + srpStrToInt[computerSelection]);
 
             // 현재 보너스 포인트 출력
