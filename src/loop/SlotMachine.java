@@ -2,60 +2,55 @@ package loop;
 
 import java.util.Scanner;
 
-public class SlotMachine {
+public class SlotMachine  {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        final int NUM_OF_ITEMS = 3;
-        int bonusPoints = 0;
-        int gameRound = 0;
+        char[] selectedItems = {'+', '+', '-'};
+        char selectedItem = '0';
+        // 포인트 점수 계산
+        int bonusScore = 0;
+            // 연속된 문자 카운트
         int conCharCount = 0;
-        int selectedItem = 0;
-
-        // 3개의 아이템을 가지는 슬롯 머신 구현
-        char[] items = {'*', '+', '-'};
-        char[] selectedItems = new char[NUM_OF_ITEMS];
-
-         // while (true) {
-        System.out.println(gameRound + " 번째 게임");
-            // 사용자로부터 아무키나 입력
-        System.out.println("아무키나 입력 하세요");
-        scan.next();
-
-            // 랜덤하게 아이템 3개를 선택하여 1차원 배열에 저장
-        for(int i = 0; i < selectedItems.length; i++){
-            // char[] items = {'*', '+', '-'};
-            int selectedItem1 = (int) (Math.random() * NUM_OF_ITEMS);
-            selectedItems[i] = items[selectedItem];
-        }
-        System.out.println("------------------------------");
-        for(char item : selectedItems){
-            System.out.print("\t" + item);
-        }
-        System.out.println("\n------------------------------");
-
-        for(int i = 0; i < selectedItems.length - 1; i++){
-            if (selectedItems[i] == selectedItems[i+1]){
+        //           0       3 번 반복 : 0, 1, 2
+        for (int i = 0; i < selectedItems.length - 1; i++) {
+            //         index 0   == index 1, 2
+            if (selectedItems[i] == selectedItems[i+1]) {
                 conCharCount++;
+                // 연속된 문자 종류 저장
+                selectedItem = selectedItems[i];
             }
         }
         // A. 연속된 문자가 2개
-        if(conCharCount == 1){
+        if (conCharCount == 1){
             switch (selectedItem){
                 case '+':
+                    bonusScore += 1;
                     break;
                 case '-':
+                    bonusScore -= 1;
                     break;
                 case '*':
+                    bonusScore += 2;
                     break;
                 default:
-                    System.out.println("잘못 된 ");
+                    System.out.println("something went wrong");
             }
-
             // B. 연속된 문자가 3개
-        } else if (conCharCount == 2) {
-
-
+        } else if (conCharCount == 2){
+            switch (selectedItem) {
+                case '+':
+                    bonusScore += 3;
+                    break;
+                case '-':
+                    bonusScore -= 3;
+                    break;
+                case '*':
+                    bonusScore += 5;
+                    break;
+                default:
+                    System.out.println("something went wrong");
+            }
         }
+        System.out.println(bonusScore);
 
 
     }
@@ -63,5 +58,5 @@ public class SlotMachine {
 
 
 
-// 포인트 점수 계산
+
 
