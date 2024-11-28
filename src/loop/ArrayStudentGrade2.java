@@ -52,7 +52,7 @@ public class ArrayStudentGrade2 {
 
                     numOfStudents++;
 
-                break;
+                    break;
                 case 2:
                     for (int i = 0; i < numOfStudents; i++) {
                         for (int j = 0 ; j < stdRecordsMatrix[i].length; j++) {
@@ -62,7 +62,7 @@ public class ArrayStudentGrade2 {
                     }
                     break;
                 case 3:
-                break;
+                    break;
                 case 4:
                     System.out.println("프로그램 종료");
                     isRunning = false;
