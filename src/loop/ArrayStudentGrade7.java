@@ -20,7 +20,7 @@ public class ArrayStudentGrade7 {
         Scanner sc = new Scanner(System.in);
 
         // 사용자 메뉴 선택
-        while (true) {
+        while (isRunning) {
             System.out.println("메뉴");
             System.out.println("1. 학생 성적 입력");
             System.out.println("2. 입력된 학생 목록 출력");
@@ -79,7 +79,8 @@ public class ArrayStudentGrade7 {
                         }
                     }
                     System.out.println("삭제할 학생의 학번을 입력하세요 (-1 입력 시 메뉴로 돌아감): ");
-                    double deleteId = sc.nextDouble();
+                    int deleteId = sc.nextInt();
+                    // -1을 입력하면 삭제 메뉴 종류 후 전체 메뉴로 복귀
                     if (deleteId == -1) {
                         System.out.println("삭제 메뉴를 종료하고 메인 메뉴로 돌아갑니다.");
                     } else {
