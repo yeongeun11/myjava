@@ -4,6 +4,7 @@ class Bar2 {
     static int x; // 클래스 멤버 변수
     int y; // 인스턴스, 멤버 변수
 
+
     static void prtX() { // 인스턴스, 멤버 메서드
         System.out.println(x);
     }
